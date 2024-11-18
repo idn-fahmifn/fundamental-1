@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CekUmur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,7 +55,7 @@ Route::get('cek-umur', function() {
 
 // Routing untuk mengirim data umur (cek umur user);
 Route::post('proses-umur', function(Request $request){
-    
+
     // validasi untuk user menuliskan umur
     $request->validate([
         'umur' => 'integer|required|max:150'
@@ -65,8 +66,14 @@ Route::post('proses-umur', function(Request $request){
 
     // mengarahkan ke route halaman berhasil.
     return redirect()->route('halaman-berhasil');
+})->name('proses');
 
-});
+
+Route::get('berhasil', function(){
+
+    return 'selamat, anda berumur lebih dari 18 tahun';
+
+})->name('halaman-berhasil')->middleware(CekUmur::class);
 
 
 

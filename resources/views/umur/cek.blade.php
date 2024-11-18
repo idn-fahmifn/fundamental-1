@@ -9,7 +9,8 @@
 
     <h1>Halaman Cek Umur</h1>
 
-    <form action="">
+    <form action="{{route('proses')}}" method="post">
+        @csrf
         <div class="form-control">
             <label>Berapa Umur Kamu?</label>
             <input type="number" name="umur">

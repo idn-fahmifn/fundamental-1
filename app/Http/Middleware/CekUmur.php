@@ -15,6 +15,16 @@ class CekUmur
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+        // ini bagian aturan :
+        $umur = $request->session()->get('umur');
+
+        // aturan jika umurnya kurang dari 18 tahun.
+        if($umur <= 18)
+        {
+            return back()->with('error', 'Maaf, anda belum memenuhi syarat');
+        }
+
         return $next($request);
     }
 }
