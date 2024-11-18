@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,6 +46,27 @@ Route::prefix('training')->group(function(){
 Route::fallback(function(){
     return '404, Halamannya gaada';
 });
+
+// Routing dengan middleware.
+Route::get('cek-umur', function() {
+    return view('umur.cek'); //jika halamannya berada di dalam folder, panggil terlebih dahulu foldernya.
+});
+
+// Routing untuk mengirim data umur (cek umur user);
+Route::post('proses-umur', function(Request $request){
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 // CRUD 
 /**
