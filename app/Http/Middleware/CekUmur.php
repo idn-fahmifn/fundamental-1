@@ -22,7 +22,7 @@ class CekUmur
         // aturan jika umurnya kurang dari 18 tahun.
         if($umur <= 18)
         {
-            return back()->with('error', 'Maaf, anda belum memenuhi syarat');
+            return back()->with('gagal', 'Maaf, anda belum memenuhi syarat');
         }
 
         return $next($request);

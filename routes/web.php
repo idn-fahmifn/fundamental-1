@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiodataController;
 use App\Http\Middleware\CekUmur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -74,6 +75,13 @@ Route::get('berhasil', function(){
     return 'selamat, anda berumur lebih dari 18 tahun';
 
 })->name('halaman-berhasil')->middleware(CekUmur::class);
+
+
+// Route dengan controller
+Route::get('biodata', [BiodataController::class, 'index']);
+
+
+
 
 
 

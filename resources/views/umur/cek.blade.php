@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Umur</title>
 </head>
+
 <body>
 
     <h1>Halaman Cek Umur</h1>
@@ -20,5 +22,10 @@
         </div>
     </form>
 
+    @if (session('gagal'))
+    <p style="color: red;">{{session('gagal')}}</p>
+    @endif
+
 </body>
+
 </html>
