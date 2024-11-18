@@ -54,6 +54,17 @@ Route::get('cek-umur', function() {
 
 // Routing untuk mengirim data umur (cek umur user);
 Route::post('proses-umur', function(Request $request){
+    
+    // validasi untuk user menuliskan umur
+    $request->validate([
+        'umur' => 'integer|required|max:150'
+    ]);
+
+    // Mengambil nilai yang diinputkan dari user 
+    $request->session()->put('umur', $request->umur);
+
+    // mengarahkan ke route halaman berhasil.
+    return redirect()->route('halaman-berhasil');
 
 });
 
