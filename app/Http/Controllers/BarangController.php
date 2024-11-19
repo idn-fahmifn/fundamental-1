@@ -13,7 +13,7 @@ class BarangController extends Controller
     public function index()
     {
         $data = Barang::all();
-        return $data;
+        return view('barang.index', compact('data'));
     }
 
     /**
@@ -21,7 +21,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return 'ini halaman create';
+        return view('barang.create');
     }
 
     /**
@@ -35,9 +35,10 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        return 'ini halaman detail';
+        $data = Barang::find($id);
+        return view('barang.detail', compact('data'));
     }
 
     /**
