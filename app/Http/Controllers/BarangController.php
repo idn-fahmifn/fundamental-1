@@ -29,7 +29,10 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // menangkap nilai yang diinputkan user.
+        $input = $request->all();
+        Barang::create($input);
+        return redirect()->route('barang.index');
     }
 
     /**

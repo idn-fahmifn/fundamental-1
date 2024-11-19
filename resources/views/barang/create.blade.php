@@ -10,9 +10,8 @@
     
     <!-- form input -->
 
-    <form action="#" method="post">
+    <form action="{{route('barang.store')}}" method="post">
         @csrf
-
         <!-- input untuk nama barang -->
         <div class="form-group">
             <label>Nama Barang</label>
@@ -38,7 +37,11 @@
         <!-- input untuk deskripsi -->
         <div class="form-group">
             <label>Deskripsi</label>
-            <textarea name="deksripsi_barang" id=""></textarea>
+            <textarea name="deskripsi_barang" id=""></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Tambah barang</button>
         </div>
 
 
