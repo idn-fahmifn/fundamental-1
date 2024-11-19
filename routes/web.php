@@ -79,6 +79,7 @@ Route::get('berhasil', function(){
 
 // Route dengan controller
 Route::get('biodata', [BiodataController::class, 'index']);
+Route::get('biodata/create', [BiodataController::class, 'create']);
 
 
 

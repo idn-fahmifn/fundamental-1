@@ -10,4 +10,9 @@ class BiodataController extends Controller
     {
         return 'ini adalah index biodata';
     }
+
+    public function create()
+    {
+        return view('biodata.create');
+    }
 }
