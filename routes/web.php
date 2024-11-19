@@ -78,8 +78,12 @@ Route::get('berhasil', function(){
 
 
 // Route dengan controller
-Route::get('biodata', [BiodataController::class, 'index']);
-Route::get('biodata/create', [BiodataController::class, 'create']);
+//route get untuk menampilkan respon atau halaman.
+Route::get('biodata', [BiodataController::class, 'index'])->name('index-biodata');
+Route::get('biodata/create', [BiodataController::class, 'create'])->name('create-biodata');
+
+// route post untuk mengirimkan request/data pada http.
+Route::post('biodata/kirim', [BiodataController::class, 'kirim'])->name('kirim-biodata');
 
 
 

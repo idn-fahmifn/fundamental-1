@@ -15,4 +15,10 @@ class BiodataController extends Controller
     {
         return view('biodata.create');
     }
+
+    public function kirim()
+    {
+        // untuk mengirim data.
+    }
+
 }
