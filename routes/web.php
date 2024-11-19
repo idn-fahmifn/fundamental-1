@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Middleware\CekUmur;
 use Illuminate\Http\Request;
@@ -84,6 +85,11 @@ Route::get('biodata/create', [BiodataController::class, 'create'])->name('create
 
 // route post untuk mengirimkan request/data pada http.
 Route::post('biodata/kirim', [BiodataController::class, 'kirim'])->name('kirim-biodata');
+
+
+Route::resource('barang', BarangController::class);
+
+
 
 
 
