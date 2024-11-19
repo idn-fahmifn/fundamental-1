@@ -10,7 +10,7 @@
 <body>
     <h1>Halaman Create Biodata</h1>
 
-    <form action="" method="post">
+    <form action="{{route('kirim-biodata')}}" method="post">
         @csrf
         <div class="form-group">
             <label>Nama Lengkap</label>
@@ -31,7 +31,7 @@
             <label>Golongan Darah</label>
             <input type="text" name="golongan_darah">
         </div>
-        
+
         <div class="form-group">
             <button type="submit">Kirim Biodata</button>
         </div>

@@ -16,9 +16,11 @@ class BiodataController extends Controller
         return view('biodata.create');
     }
 
-    public function kirim()
+    public function kirim(Request $request)
     {
-        // untuk mengirim data.
+        // mengambil data yang diinputkan oleh user, disimpan semntara oleh $request
+        $input = $request->all();
+        dd($input); //menampilkan value yang diinputkan user
     }
 
 }
