@@ -20,7 +20,7 @@
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
-                                <>
+                                <tr>
                                     <td>Fahmi FN</td>
                                     <td>375920</td>
                                     <td>
