@@ -51,7 +51,7 @@ class KaryawanController extends Controller
         $input['slug'] = $lower;
 
         Karyawan::create($input);
-        return redirect()->route('karyawan.index');
+        return redirect()->route('karyawan.index')->with('success', 'Data berhasil ditambahkan.');
     }
 
     /**
