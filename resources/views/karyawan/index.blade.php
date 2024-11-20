@@ -20,13 +20,19 @@
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
+
+                                @foreach ($data as $item)
+
                                 <tr>
-                                    <td>Fahmi FN</td>
-                                    <td>375920</td>
+                                    <td>{{$item->nama_karyawan}}</td>
+                                    <td>{{$item->nik}}</td>
                                     <td>
-                                        <a href="" class="btn btn-danger">Pilihan</a>
+                                        <a href="" class="btn text-muted">detail</a>
                                     </td>
                                 </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

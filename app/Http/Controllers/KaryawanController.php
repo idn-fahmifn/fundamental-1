@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KaryawanController extends Controller
 {
@@ -12,7 +13,10 @@ class KaryawanController extends Controller
      */
     public function index()
     {
-        return view('karyawan.index');
+        // memanggil semua nilai yang terdapat pada model karywan.
+
+        $data = Karyawan::all();
+        return view('karyawan.index', compact('data'));
     }
 
     /**
@@ -28,15 +32,22 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $slug = $input['nama_karyawan'].random_int(000000, 999999);
+        $lower = Str::lower($slug);
+        $input['slug'] = $lower;
+
+        Karyawan::create($input);
+        return redirect()->route('karyawan.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Karyawan $karyawan)
+    public function show($id)
     {
-        //
+        $data = Karyawan::find($id);
+        return view('karyawan.show', compact('data'));
     }
 
     /**
@@ -62,4 +73,7 @@ class KaryawanController extends Controller
     {
         //
     }
+
+    
+
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Karyawan;
 
 class BiodataController extends Controller
 {
@@ -21,6 +22,12 @@ class BiodataController extends Controller
         // mengambil data yang diinputkan oleh user, disimpan semntara oleh $request
         $input = $request->all();
         dd($input); //menampilkan value yang diinputkan user
+    }
+
+    public function detailSlug($slug)
+    {
+        $data = Karyawan::find($slug);
+        return $data;
     }
 
 }

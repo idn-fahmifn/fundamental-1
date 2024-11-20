@@ -92,6 +92,9 @@ Route::resource('barang', BarangController::class);
 // Route Karyawan
 Route::resource('karyawan', KaryawanController::class);
 
+Route::get('biodata/{parameter}', [BiodataController::class, 'detailSlug']);
+
+
 
 Route::view('tampilan', 'layouts.app');
 
@@ -120,3 +123,4 @@ Route::view('tampilan', 'layouts.app');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

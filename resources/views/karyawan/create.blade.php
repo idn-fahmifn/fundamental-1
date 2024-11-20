@@ -10,7 +10,7 @@
                     Tambah Data
                 </div>
 
-                <form action="#" method="post">
+                <form action="{{route('karyawan.store')}}" method="post">
                     @csrf
                     <div class="card-body">
                         <!-- input nama karyawab -->
