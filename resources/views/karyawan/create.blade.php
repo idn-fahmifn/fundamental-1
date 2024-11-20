@@ -10,6 +10,17 @@
                     Tambah Data
                 </div>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger bg-opacity-50">
+                        <span class="text-danger">Woops! ada error.</span>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{route('karyawan.store')}}" method="post">
                     @csrf
                     <div class="card-body">

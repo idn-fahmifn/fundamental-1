@@ -33,6 +33,19 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+
+        $request->validate([
+
+            // integer = minimal & maksimal nilai 
+            // string = minimal & maksimal digit
+
+            'nama_karyawan' => 'string|min:2|max:50|required',
+            'umur' => 'integer|min:10|max:60|required',
+            'nik' => 'string|min:5|max:15|required|unique:karyawan',
+            'tempat_lahir' => 'required|string',
+            'tanggal_lahir' => 'required|date'
+        ]);
+
         $slug = $input['nama_karyawan'].random_int(000000, 999999);
         $lower = Str::lower($slug);
         $input['slug'] = $lower;
