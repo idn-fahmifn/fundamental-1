@@ -41,8 +41,9 @@
                 <div class="card-footer">
                     <form action="{{route('karyawan.destroy', $data->id)}}" method="post">
                         @csrf
-                        <a href="" class="btn text-muted">Kembali</a>
-                        <a href="" class="btn btn-outline-success">Edit karyawan</a>
+                        {{method_field('delete')}}
+                        <a href="{{route('karyawan.index')}}" class="btn text-muted">Kembali</a>
+                        <a href="{{route('karyawan.edit', $data->id)}}" class="btn btn-outline-success">Edit karyawan</a>
                         <button type="submit" class="btn btn-outline-danger">Hapus karyawan</button>
                     </form>
                 </div>

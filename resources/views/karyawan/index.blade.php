@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-center">
                     <p>Halaman Karyawan</p>
-                    <a href="" class="btn btn-success">tambah</a>
+                    <a href="{{route('karyawan.create')}}" class="btn btn-outline-success">Tambah karyawan</a>
                 </div>
 
                 <div class="card-body">
@@ -20,19 +20,15 @@
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
-
                                 @foreach ($data as $item)
-
                                 <tr>
                                     <td>{{$item->nama_karyawan}}</td>
                                     <td>{{$item->nik}}</td>
                                     <td>
-                                        <a href="" class="btn text-muted">detail</a>
+                                        <a href="{{route('karyawan.show', $item->id)}}" class="btn text-muted">detail</a>
                                     </td>
                                 </tr>
-
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>

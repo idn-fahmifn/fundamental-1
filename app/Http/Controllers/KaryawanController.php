@@ -53,25 +53,31 @@ class KaryawanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Karyawan $karyawan)
+    public function edit($id)
     {
-        //
+        $data = Karyawan::find($id);
+        return view('karyawan.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Karyawan $karyawan)
+    public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $data = Karyawan::find($id);
+        $data->update($input);
+        return redirect()->route('karyawan.index')->with('success', 'Data berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Karyawan $karyawan)
+    public function destroy($id)
     {
-        //
+        $data = Karyawan::find($id);
+        $data->delete();
+        return redirect()->route('karyawan.index')->with('success', 'Data karyawan berhasil dihapus');
     }
 
     
