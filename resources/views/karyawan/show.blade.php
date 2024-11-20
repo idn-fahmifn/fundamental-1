@@ -44,7 +44,7 @@
                         {{method_field('delete')}}
                         <a href="{{route('karyawan.index')}}" class="btn text-muted">Kembali</a>
                         <a href="{{route('karyawan.edit', $data->id)}}" class="btn btn-outline-success">Edit karyawan</a>
-                        <button type="submit" class="btn btn-outline-danger">Hapus karyawan</button>
+                        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Yakin anda akan menghapus?')">Hapus karyawan</button>
                     </form>
                 </div>
             </div>
